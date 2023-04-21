@@ -1,0 +1,14 @@
+D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Core\bin\Debug\net7.0\TggWeb.Core.deps.json
+D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Core\bin\Debug\net7.0\TggWeb.Core.dll
+D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Core\bin\Debug\net7.0\TggWeb.Core.pdb
+D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Core\obj\Debug\net7.0\TggWeb.Core.csproj.AssemblyReference.cache
+D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Core\obj\Debug\net7.0\TggWeb.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Core\obj\Debug\net7.0\TggWeb.Core.AssemblyInfoInputs.cache
+D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Core\obj\Debug\net7.0\TggWeb.Core.AssemblyInfo.cs
+D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Core\obj\Debug\net7.0\TggWeb.Core.csproj.CoreCompileInputs.cache
+D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Core\obj\Debug\net7.0\TggWeb.Core.dll
+D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Core\obj\Debug\net7.0\refint\TggWeb.Core.dll
+D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Core\obj\Debug\net7.0\TggWeb.Core.pdb
+D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Core\obj\Debug\net7.0\ref\TggWeb.Core.dll
+D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Core\bin\Debug\net7.0\TggWeb.Core.runtimeconfig.json
+D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Core\obj\Debug\net7.0\TggWeb.Core.genruntimeconfig.cache
