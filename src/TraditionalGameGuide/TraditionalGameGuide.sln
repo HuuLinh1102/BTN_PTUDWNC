@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TggWeb.Data", "TggWeb.Data\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TggWeb.Services", "TggWeb.Services\TggWeb.Services.csproj", "{961FC25B-DFC2-4FD7-B009-A10E74CD8CC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TggWeb.WinApp", "TggWeb.WinApp\TggWeb.WinApp.csproj", "{1ADA643A-D609-4A0F-828C-357B726ECD4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TggWeb.WinApp", "TggWeb.WinApp\TggWeb.WinApp.csproj", "{1ADA643A-D609-4A0F-828C-357B726ECD4C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TggWeb.WebApi", "TggWeb.WebApi\TggWeb.WebApi.csproj", "{3C51DB53-AA54-4E59-B8FD-D93D5F936BCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{1ADA643A-D609-4A0F-828C-357B726ECD4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1ADA643A-D609-4A0F-828C-357B726ECD4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1ADA643A-D609-4A0F-828C-357B726ECD4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C51DB53-AA54-4E59-B8FD-D93D5F936BCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C51DB53-AA54-4E59-B8FD-D93D5F936BCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C51DB53-AA54-4E59-B8FD-D93D5F936BCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C51DB53-AA54-4E59-B8FD-D93D5F936BCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -23,16 +23,16 @@ namespace TggWeb.Data.Contexts
 
 		public DbSet<Comment> Comments { get; set; }
 
-		protected override void OnConfiguring
-			(DbContextOptionsBuilder optionsBuilder)
-		{
-			optionsBuilder.UseSqlServer(@"Server=HuuLinh;Database=TggWeb;
-					Trusted_Connection=True;Encrypt=False;MultipleActiveResultSets=true");
-		}
-		//public WebDbContext(DbContextOptions<WebDbContext> options)
-		//   : base(options)
+		//protected override void OnConfiguring
+		//	(DbContextOptionsBuilder optionsBuilder)
 		//{
+		//	optionsBuilder.UseSqlServer(@"Server=HuuLinh;Database=TggWeb;
+		//			Trusted_Connection=True;Encrypt=False;MultipleActiveResultSets=true");
 		//}
+		public WebDbContext(DbContextOptions<WebDbContext> options)
+		   : base(options)
+		{
+		}
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 

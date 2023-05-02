@@ -1,14 +1,16 @@
-﻿using TggWeb.Data.Contexts;
+﻿using Microsoft.Extensions.Caching.Memory;
+using TggWeb.Data.Contexts;
 using TggWeb.Data.Seeders;
+using TggWeb.Services.Webs;
 
-var context = new WebDbContext();
-var seeder = new DataSeeder(context);
+//var context = new WebDbContext();
 
-seeder.Initialize();
+//ICategoryRepository webRepository = new CategoryRepository(context);
 
-var games = context.Games.ToList();
+//var cats = await webRepository.GetCategoriesAsync();
 
-foreach (var game in games)
-{
-	Console.WriteLine(game.Name);
-}	
+//foreach (var cat in cats)
+//{
+//	Console.WriteLine("ID        : {0}", cat.Id);
+//	Console.WriteLine("Name     : {0}", cat.Name);
+//}

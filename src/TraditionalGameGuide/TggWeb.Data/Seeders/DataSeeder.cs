@@ -27,8 +27,10 @@ namespace TggWeb.Data.Seeders
             var categories = AddCategories();
 			var games = AddGames(categories);
 			var tags = AddTags();
+			var subscribers = AddSubcriber();
             var posts = AddPosts(games, tags);
-        }
+			var comments = AddComments(posts, subscribers);
+		}
 
         
 
@@ -238,9 +240,28 @@ namespace TggWeb.Data.Seeders
             _dbConText.SaveChanges();
 
             return tags;
-
+				
         }
+		private IList<Subscriber> AddSubcriber()
+		{
+			var subscribers = new List<Subscriber>()
+			{
+				new() { Email = "jod@gmail.com",
+					SubscriptionDate = new DateTime(2021, 9, 30, 10, 20, 0) },
+				new() { Email = "david@gmail.com",
+					SubscriptionDate = new DateTime(2022, 10, 20, 10, 20, 0) },
+				new() { Email = "jack@gmail.com",
+					SubscriptionDate = new DateTime(2022, 11, 20, 10, 20, 0) }
+			};
 
+			_dbConText.AddRange(subscribers);
+			_dbConText.SaveChanges();
+
+			return subscribers;
+
+		}
+
+		
         private IList<Post> AddPosts(
             IList<Game> game,
             IList<Tag> tags) 
@@ -556,6 +577,39 @@ namespace TggWeb.Data.Seeders
         
             return posts;
         }
-        
-    }
+
+		private IList<Comment> AddComments(IList<Post> posts, IList<Subscriber> subscribers)
+		{
+			var comments = new List<Comment>()
+			{
+				new() {Content = "Thật là hay",
+					   CreatedDate = new DateTime(2022, 9, 30, 10, 20, 0),
+					   IsApproved = true,
+					   Subscriber = subscribers[0],
+					   Post = posts[0]},
+				new() {Content = "Dễ hiểu đó",
+					   CreatedDate = new DateTime(2022, 10, 30, 10, 20, 0),
+					   IsApproved = true,
+					   Subscriber = subscribers[1],
+					   Post = posts[0]},
+				new() {Content = "Ô la la",
+					   CreatedDate = new DateTime(2022, 9, 30, 10, 20, 0),
+					   IsApproved = true,
+					   Subscriber = subscribers[2],
+					   Post = posts[1]},
+				new() {Content = "Thật là hay",
+					   CreatedDate = new DateTime(2022, 9, 30, 10, 20, 0),
+					   IsApproved = true,
+					   Subscriber = subscribers[0],
+					   Post = posts[2]}
+			};
+
+			_dbConText.AddRange(comments);
+			_dbConText.SaveChanges();
+
+			return comments;
+		}
+
+
+	}
 }
