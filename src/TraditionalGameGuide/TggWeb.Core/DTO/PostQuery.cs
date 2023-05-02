@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TatBlog.Core.DTO
+namespace TggWeb.Core.DTO
 {
     public class PostQuery
     {
-        // cho phép null
-        public int? GaneId { get; set; }
+       
+        public int? GameId { get; set; }
         public string GameSlug { get; set; }
         public int? CategoryId { get; set; }
         public int? TagId { get; set; }
