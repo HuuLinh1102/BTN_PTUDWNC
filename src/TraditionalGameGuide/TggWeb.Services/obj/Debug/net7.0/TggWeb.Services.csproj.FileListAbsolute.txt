@@ -15,3 +15,20 @@ D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\obj\Debug\net
 D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\obj\Debug\net7.0\refint\TggWeb.Services.dll
 D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\obj\Debug\net7.0\TggWeb.Services.pdb
 D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\obj\Debug\net7.0\ref\TggWeb.Services.dll
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\bin\Debug\net7.0\TggWeb.Services.deps.json
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\bin\Debug\net7.0\TggWeb.Services.dll
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\bin\Debug\net7.0\TggWeb.Services.pdb
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\bin\Debug\net7.0\TggWeb.Core.dll
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\bin\Debug\net7.0\TggWeb.Data.dll
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\bin\Debug\net7.0\TggWeb.Core.pdb
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\bin\Debug\net7.0\TggWeb.Data.pdb
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\obj\Debug\net7.0\TggWeb.Services.csproj.AssemblyReference.cache
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\obj\Debug\net7.0\TggWeb.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\obj\Debug\net7.0\TggWeb.Services.AssemblyInfoInputs.cache
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\obj\Debug\net7.0\TggWeb.Services.AssemblyInfo.cs
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\obj\Debug\net7.0\TggWeb.Services.csproj.CoreCompileInputs.cache
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\obj\Debug\net7.0\TggWeb.Services.csproj.CopyComplete
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\obj\Debug\net7.0\TggWeb.Services.dll
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\obj\Debug\net7.0\refint\TggWeb.Services.dll
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\obj\Debug\net7.0\TggWeb.Services.pdb
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Services\obj\Debug\net7.0\ref\TggWeb.Services.dll

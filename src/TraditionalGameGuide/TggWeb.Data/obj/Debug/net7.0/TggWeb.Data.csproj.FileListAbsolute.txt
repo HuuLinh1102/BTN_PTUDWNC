@@ -13,3 +13,18 @@ D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\obj\Debug\net7.0\
 D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\obj\Debug\net7.0\refint\TggWeb.Data.dll
 D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\obj\Debug\net7.0\TggWeb.Data.pdb
 D:\WebNangCao\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\obj\Debug\net7.0\ref\TggWeb.Data.dll
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\bin\Debug\net7.0\TggWeb.Data.deps.json
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\bin\Debug\net7.0\TggWeb.Data.dll
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\bin\Debug\net7.0\TggWeb.Data.pdb
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\bin\Debug\net7.0\TggWeb.Core.dll
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\bin\Debug\net7.0\TggWeb.Core.pdb
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\obj\Debug\net7.0\TggWeb.Data.csproj.AssemblyReference.cache
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\obj\Debug\net7.0\TggWeb.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\obj\Debug\net7.0\TggWeb.Data.AssemblyInfoInputs.cache
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\obj\Debug\net7.0\TggWeb.Data.AssemblyInfo.cs
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\obj\Debug\net7.0\TggWeb.Data.csproj.CoreCompileInputs.cache
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\obj\Debug\net7.0\TggWeb.Data.csproj.CopyComplete
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\obj\Debug\net7.0\TggWeb.Data.dll
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\obj\Debug\net7.0\refint\TggWeb.Data.dll
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\obj\Debug\net7.0\TggWeb.Data.pdb
+D:\học\hk2 năm 3\PTUDWNC\BTN_PTUDWNC\src\TraditionalGameGuide\TggWeb.Data\obj\Debug\net7.0\ref\TggWeb.Data.dll
