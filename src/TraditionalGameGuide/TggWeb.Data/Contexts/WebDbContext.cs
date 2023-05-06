@@ -26,8 +26,7 @@ namespace TggWeb.Data.Contexts
 		//protected override void OnConfiguring
 		//	(DbContextOptionsBuilder optionsBuilder)
 		//{
-		//	optionsBuilder.UseSqlServer(@"Server=HuuLinh;Database=TggWeb;
-		//			Trusted_Connection=True;Encrypt=False;MultipleActiveResultSets=true");
+		//	optionsBuilder.UseSqlServer(@"server=quang-thanh\sqlexpress;database=TggWeb; trusted_connection=true;multipleactiveresultsets=true;trustservercertificate=true");
 		//}
 		public WebDbContext(DbContextOptions<WebDbContext> options)
 		   : base(options)

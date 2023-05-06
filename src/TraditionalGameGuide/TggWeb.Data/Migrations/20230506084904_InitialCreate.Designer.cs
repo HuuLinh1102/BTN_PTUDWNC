@@ -12,7 +12,7 @@ using TggWeb.Data.Contexts;
 namespace TggWeb.Data.Migrations
 {
     [DbContext(typeof(WebDbContext))]
-    [Migration("20230421132953_InitialCreate")]
+    [Migration("20230506084904_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -37,7 +37,7 @@ namespace TggWeb.Data.Migrations
 
                     b.HasIndex("TagsId");
 
-                    b.ToTable("PostTags", (string)null);
+                    b.ToTable("PostTag", (string)null);
                 });
 
             modelBuilder.Entity("TggWeb.Core.Entities.Category", b =>
@@ -207,7 +207,7 @@ namespace TggWeb.Data.Migrations
 
                     b.HasIndex("GameId");
 
-                    b.ToTable("Posts", (string)null);
+                    b.ToTable("Post", (string)null);
                 });
 
             modelBuilder.Entity("TggWeb.Core.Entities.Subscriber", b =>
@@ -244,7 +244,7 @@ namespace TggWeb.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Subscribers", (string)null);
+                    b.ToTable("Subscriber", (string)null);
                 });
 
             modelBuilder.Entity("TggWeb.Core.Entities.Tag", b =>
@@ -271,7 +271,7 @@ namespace TggWeb.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tags", (string)null);
+                    b.ToTable("Tag", (string)null);
                 });
 
             modelBuilder.Entity("PostTag", b =>

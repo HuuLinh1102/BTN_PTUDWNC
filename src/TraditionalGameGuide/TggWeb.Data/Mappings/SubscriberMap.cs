@@ -8,7 +8,7 @@ namespace TggWeb.Data.Mappings
 	{
 		public void Configure(EntityTypeBuilder<Subscriber> builder)
 		{
-			builder.ToTable("Subscribers");
+			builder.ToTable("Subscriber");
 			builder.HasKey(s => s.Id);
 			builder.Property(s => s.Email)
 				.IsRequired()

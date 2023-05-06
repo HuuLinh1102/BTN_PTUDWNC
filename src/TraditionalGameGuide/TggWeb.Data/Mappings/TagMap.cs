@@ -8,7 +8,7 @@ namespace TggWeb.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<Tag> builder)
         {
-            builder.ToTable("Tags");
+            builder.ToTable("Tag");
 
             builder.HasKey(t => t.Id);
 

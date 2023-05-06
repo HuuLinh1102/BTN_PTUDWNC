@@ -13,7 +13,7 @@ namespace TggWeb.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<Post> builder)
         {
-            builder.ToTable("Posts");
+            builder.ToTable("Post");
 
             builder.HasKey(p => p.Id);
 
@@ -58,7 +58,7 @@ namespace TggWeb.Data.Mappings
 
 			builder.HasMany(p => p.Tags)
                 .WithMany(t => t.Posts)
-                .UsingEntity(pt => pt.ToTable("PostTags"));
+                .UsingEntity(pt => pt.ToTable("PostTag"));
 
 		}
     }
