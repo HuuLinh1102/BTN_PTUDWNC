@@ -21,11 +21,20 @@ const PostList = ({ postItem }) => {
             <Card.Text>
               <small className='text-muted'>Tác giả:</small>
               <span className='text-primary m-1'>
-                {postItem.author.fullName}
+                {postItem.tags.map((item, index) => {
+                  return (
+                    item.urlSlug,
+                    item.name
+                  )
+                })}
               </span>
               <small className='text-muted'>Chủ đề:</small>
               <span className='text-primary m-1'>
-                {postItem.category.name}
+                {postItem.categories.map((item, index) => {
+                  return (
+                    item.name
+                  )
+                })}
               </span>
             </Card.Text>
             <Card.Text>

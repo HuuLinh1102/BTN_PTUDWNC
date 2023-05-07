@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Link } from 'react-router-dom';
-import { getPost, getPosts } from '../Services/FeaturedPosts';
+import { getPosts } from '../Services/FeaturedPosts';
 const FeaturedPosts = () => {
   const [postList, setPostList] = useState([]);
   useEffect(() => {
@@ -22,7 +22,7 @@ const FeaturedPosts = () => {
           {postList.map((item, index) => {
             return (
               <ListGroup.Item key={index}>
-                <Link to={`/blog/post?slug=${item.urlSlug}`}
+                <Link to={`/blog/category?slug=${item.urlSlug}`}
                   title={item.description}
                   key={index}>
                   {item.name}

@@ -3,7 +3,7 @@ import axios from "axios";
 export async function getPosts() {
   try {
     const response = await
-      axios.get('https://localhost:7054/api/posts');
+      axios.get('https://localhost:7054/api/categories');
     const data = response.data;
     if (data.isSuccess)
       return data.result;
