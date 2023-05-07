@@ -45,7 +45,7 @@ namespace TggWeb.WebApi.Endpoints
 				.AddEndpointFilter<ValidatorFilter<GameEditModel>>()
 				.WithName("AddNewGame")
 				.Produces(401)
-				.Produces<ApiResponse<GameItem>>();
+				.Produces<ApiResponse<GameDto>>();
 
 			routeGroupBuilder.MapPost("/{id:int}/avatar", SetGamePicture)
 				.WithName("SetGamePicture")
@@ -137,7 +137,7 @@ namespace TggWeb.WebApi.Endpoints
 		}
 
 		private static async Task<IResult> AddGame(
-			[FromServices] GameEditModel model,
+			[AsParameters] GameEditModel model,
 			[FromServices] IGameRepository gameRepository,
 			[FromServices] IMapper mapper)
 		{
@@ -153,7 +153,7 @@ namespace TggWeb.WebApi.Endpoints
 			await gameRepository.AddOrUpdateAsync(game);
 
 			return Results.Ok(ApiResponse.Success(
-				mapper.Map<GameItem>(game),
+				mapper.Map<GameDto>(game),
 				HttpStatusCode.Created));
 		}
 
@@ -180,7 +180,7 @@ namespace TggWeb.WebApi.Endpoints
 
 		private static async Task<IResult> UpdateGame(
 			[FromRoute] int id,
-			[FromServices] GameEditModel model,
+			[AsParameters] GameEditModel model,
 			[FromServices] IValidator<GameEditModel> validator,
 			[FromServices] IGameRepository gameRepository,
 			[FromServices] IMapper mapper)

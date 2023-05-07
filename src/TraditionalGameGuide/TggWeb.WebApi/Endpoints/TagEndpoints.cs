@@ -40,7 +40,7 @@ namespace TggWeb.WebApi.Endpoints
 				.AddEndpointFilter<ValidatorFilter<TagEditModel>>()
 				.WithName("AddNewTag")
 				.Produces(401)
-				.Produces<ApiResponse<TagItem>>();
+				.Produces<ApiResponse<TagDto>>();
 
 			routeGroupBuilder.MapPut("/{id:int}", UpdateTag)
 				.WithName("UpdateAnTag")
@@ -106,7 +106,7 @@ namespace TggWeb.WebApi.Endpoints
 		}
 
 		private static async Task<IResult> AddTag(
-			[FromServices] TagEditModel model,
+			[AsParameters] TagEditModel model,
 			[FromServices] ITagRepository tagRepository,
 			[FromServices] IMapper mapper)
 		{
@@ -122,14 +122,14 @@ namespace TggWeb.WebApi.Endpoints
 			await tagRepository.AddOrUpdateAsync(Tag);
 
 			return Results.Ok(ApiResponse.Success(
-				mapper.Map<TagItem>(Tag),
+				mapper.Map<TagDto>(Tag),
 				HttpStatusCode.Created));
 		}
 
 
 		private static async Task<IResult> UpdateTag(
 			[FromRoute] int id,
-			[FromServices] TagEditModel model,
+			[AsParameters] TagEditModel model,
 			[FromServices] IValidator<TagEditModel> validator,
 			[FromServices] ITagRepository tagRepository,
 			[FromServices] IMapper mapper)

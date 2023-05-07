@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using Mapster;
 using MapsterMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using TggWeb.Core.Collections;
@@ -46,14 +47,12 @@ namespace TggWeb.WebApi.Endpoints
 			routeGroupBuilder.MapPost("/", AddCategory)
 				.WithName("AddNewCategory")
 				.AddEndpointFilter<ValidatorFilter<CategoryEditModel>>()
-				.RequireAuthorization()
 				.Produces(401)
-				.Produces<ApiResponse<CategoryItem>>();
+				.Produces<ApiResponse<CategoryDto>>();
 
 			routeGroupBuilder.MapPut("/{id:int}", UpdateCategory)
 				.WithName("UpdateAnCategory")
 				.AddEndpointFilter<ValidatorFilter<CategoryEditModel>>()
-				.RequireAuthorization()
 				.Produces(401)
 				.Produces<ApiResponse<CategoryItem>>();
 
@@ -144,7 +143,7 @@ namespace TggWeb.WebApi.Endpoints
 		}
 
 		private static async Task<IResult> AddCategory(
-			[FromServices] CategoryEditModel model,
+			[AsParameters]CategoryEditModel model,
 			[FromServices] ICategoryRepository categoryRepository,
 			[FromServices] IMapper mapper)
 		{
@@ -160,13 +159,13 @@ namespace TggWeb.WebApi.Endpoints
 			await categoryRepository.AddOrUpdateAsync(category);
 
 			return Results.Ok(ApiResponse.Success(
-				mapper.Map<CategoryItem>(category),
+				mapper.Map<CategoryDto>(category),
 				HttpStatusCode.Created));
 		}
 
 		private static async Task<IResult> UpdateCategory(
 			[FromRoute] int id,
-			[FromServices] CategoryEditModel model,
+			[AsParameters] CategoryEditModel model,
 			[FromServices] IValidator<CategoryEditModel> validator,
 			[FromServices] ICategoryRepository categoryRepository,
 			[FromServices] IMapper mapper)

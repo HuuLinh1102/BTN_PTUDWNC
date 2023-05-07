@@ -101,22 +101,20 @@ namespace TggWeb.Services.Webs
 				.ToPagedListAsync(pagingParams, cancellationToken);
 		}
 
-
-
-		public async Task<Comment> CreateCommentAsync(
-			Comment comment, 
-			CancellationToken cancellationToken = default)
+		public async Task<bool> AddOrUpdateAsync(
+		Comment comment,
+		CancellationToken cancellationToken = default)
 		{
-			await _context.Comments.AddAsync(comment, cancellationToken);
-			await _context.SaveChangesAsync(cancellationToken);
-			return comment;
-		}
+			if (comment.Id > 0)
+			{
+				_context.Comments.Update(comment);
+				_memoryCache.Remove($"comment.by-id.{comment.Id}");
+			}
+			else
+			{
+				_context.Comments.Add(comment);
+			}
 
-		public async Task<bool> UpdateCommentAsync(
-			Comment comment, 
-			CancellationToken cancellationToken = default)
-		{
-			_context.Comments.Update(comment);
 			return await _context.SaveChangesAsync(cancellationToken) > 0;
 		}
 

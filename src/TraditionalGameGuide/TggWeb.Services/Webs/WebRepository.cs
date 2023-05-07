@@ -11,6 +11,7 @@ using TggWeb.Core.Contracts;
 using TggWeb.Core.Entities;
 using TggWeb.Data.Contexts;
 using TggWeb.Services.Extensions;
+using UnidecodeSharpFork;
 
 namespace TggWeb.Services.Webs
 {
@@ -37,7 +38,6 @@ namespace TggWeb.Services.Webs
 
 			return await _context.Set<Post>()
 				.Include(x => x.Game)
-				.Include(x => x.Game.Category)
 				.Include(x => x.Tags)
 				.Include(x => x.Comments)
 				.FirstOrDefaultAsync(x => x.Id == postId, cancellationToken);
@@ -218,51 +218,71 @@ namespace TggWeb.Services.Webs
 			IEnumerable<string> tags,
 			CancellationToken cancellationToken = default)
 		{
-			if (post.Id > 0)
+			var existingPost = await _context.Posts.FindAsync(post.Id);
+			if (existingPost != null)
 			{
-				// Xóa các tag của bài viết cũ trong database
-				var oldPost = await _context.Posts.Include(p => p.Tags)
-					.FirstOrDefaultAsync(p => p.Id == post.Id, cancellationToken);
-				oldPost.Tags.Clear();
-				await _context.SaveChangesAsync(cancellationToken);
-
-				// Thêm các tag mới cho bài viết
-				foreach (var tagName in tags)
-				{
-					var tag = await _context.Tags
-						.FirstOrDefaultAsync(t => t.Name == tagName, cancellationToken);
-					if (tag == null)
-					{
-						tag = new Tag { Name = tagName };
-						_context.Tags.Add(tag);
-					}
-
-					post.Tags.Add(tag);
-				}
-
-				_context.Posts.Update(post);
-				_memoryCache.Remove($"post.by-id.{post.Id}");
+				await _context.Entry(existingPost).Collection(x => x.Tags).LoadAsync(cancellationToken);
 			}
 			else
 			{
-				// Thêm các tag mới cho bài viết
-				foreach (var tagName in tags)
-				{
-					var tag = await _context.Tags
-						.FirstOrDefaultAsync(t => t.Name == tagName, cancellationToken);
-					if (tag == null)
-					{
-						tag = new Tag { Name = tagName };
-						_context.Tags.Add(tag);
-					}
-
-					post.Tags.Add(tag);
-				}
-
-				_context.Posts.Add(post);
+				post.Tags = new List<Tag>();
 			}
 
-			return await _context.SaveChangesAsync(cancellationToken) > 0;
+			var validTags = tags.Where(x => !string.IsNullOrWhiteSpace(x))
+				.Select(x => new
+				{
+					Name = x,
+					Slug = GenerateSlug(x)
+				})
+				.GroupBy(x => x.Slug)
+				.ToDictionary(g => g.Key, g => g.First().Name);
+
+			foreach (var kv in validTags)
+			{
+				if (existingPost.Tags.Any(x => string.Compare(x.UrlSlug, kv.Key, StringComparison.InvariantCultureIgnoreCase) == 0)) continue;
+
+				var tag = await GetTagAsync(kv.Key, cancellationToken) ?? new Tag()
+				{
+					Name = kv.Value,
+					Description = kv.Value,
+					UrlSlug = kv.Key
+				};
+
+				existingPost.Tags.Add(tag);
+			}
+
+			existingPost.Tags = existingPost.Tags.Where(t => validTags.ContainsKey(t.UrlSlug)).ToList();
+			existingPost.Title = post.Title;
+			existingPost.UrlSlug = post.UrlSlug;
+			existingPost.ImageUrl = post.ImageUrl;
+			existingPost.Description = post.Description;
+			existingPost.ShortDescription = post.ShortDescription;
+			existingPost.Published = post.Published;
+			existingPost.ModifiedDate = DateTime.Now;
+			existingPost.Game = post.Game;
+			existingPost.GameId = post.GameId;
+			existingPost.ViewCount = post.ViewCount;
+			existingPost.Comments = post.Comments;
+
+			if (existingPost.Id > 0)
+			{
+				_context.Update(existingPost);
+			}
+			else
+			{
+				_context.Add(post);
+			}
+
+
+			try
+			{
+				await _context.SaveChangesAsync(cancellationToken);
+				return true; // Trả về true nếu lưu thành công
+			}
+			catch (Exception)
+			{
+				return false; // Trả về false nếu có lỗi xảy ra
+			}
 		}
 
 		// Kiểm tra xem tên định danh của bài viết đã có hay chưa 
@@ -279,6 +299,7 @@ namespace TggWeb.Services.Webs
 		private static string GenerateSlug(string phrase)
 		{
 			var str = phrase.ToLowerInvariant().Trim();
+			str = str.Unidecode();
 			str = Regex.Replace(str, @"[^a-z0-9\s-]", "");
 			str = Regex.Replace(str, @"\s+", " ").Trim();
 			str = str.Substring(0, str.Length <= 50 ? str.Length : 50).Trim();

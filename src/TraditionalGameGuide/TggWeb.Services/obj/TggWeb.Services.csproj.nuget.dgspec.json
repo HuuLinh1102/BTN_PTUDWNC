@@ -182,6 +182,10 @@
             "System.Linq.Dynamic.Core": {
               "target": "Package",
               "version": "[1.3.2, )"
+            },
+            "UnidecodeSharpFork": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "imports": [
