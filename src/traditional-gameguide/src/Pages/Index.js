@@ -38,6 +38,7 @@ const Index = () => {
     return (
       <div className='p-4'>
         {postList.map((item, index) => {
+
           return (
             <PostItem postItem={item} key={index} />
           );

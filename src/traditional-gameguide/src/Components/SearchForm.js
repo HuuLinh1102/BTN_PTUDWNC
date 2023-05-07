@@ -18,9 +18,9 @@ const SearchForm = () => {
             type='text'
             name='k'
             ref={keyword}
-            aria-label='Enter keyword'
+            aria-label='Tìm kiếm...'
             aria-describedby='btnSearchPost'
-            placeholder='Enter keyword' />
+            placeholder='Tìm kiếm...' />
           <Button
             id='btnSearchPost'
             variant='outline-secondary'

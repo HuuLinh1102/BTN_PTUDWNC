@@ -10,7 +10,7 @@ const Pager = ({ postQuery, metadata }) => {
     pageNumber = metadata.pageNumber,
     pageSize = metadata.pageSize,
     actionName = '', slug = '',
-    keyword = postquery.keyword ?? '';
+    keyword = postQuery.keyword ?? '';
   if (pageCount > 1) {
     return (
       <div className='text-center my-4'>
