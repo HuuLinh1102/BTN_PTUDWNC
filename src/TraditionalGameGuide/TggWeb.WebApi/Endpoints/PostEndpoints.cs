@@ -37,7 +37,7 @@ namespace TggWeb.WebApi.Endpoints
 
 			routeGroupBuilder.MapGet("/{id:int}", GetPostDetailsById)
 				.WithName("GetPostDetailsById")
-				.Produces<ApiResponse<Post>>()
+				.Produces<ApiResponse<PostDetail>>()
 				.Produces(404);
 
 			routeGroupBuilder.MapGet("/byslug/{slug:regex(^[a-z0-9 -]+$)}", GetPostDetailsBySlug)
@@ -49,7 +49,7 @@ namespace TggWeb.WebApi.Endpoints
 				.AddEndpointFilter<ValidatorFilter<PostEditModel>>()
 				.WithName("AddNewPost")
 				.Produces(401)
-				.Produces<ApiResponse<PostItem>>();
+				.Produces<ApiResponse<PostDetail>>();
 
 			routeGroupBuilder.MapPost("/{id:int}/picture", SetPostPicture)
 				.WithName("SetPostPicture")
@@ -61,7 +61,7 @@ namespace TggWeb.WebApi.Endpoints
 				.WithName("UpdateAnPost")
 				.AddEndpointFilter<ValidatorFilter<PostEditModel>>()
 				.Produces(401)
-				.Produces<ApiResponse<PostItem>>();
+				.Produces<ApiResponse<PostDto>>();
 
 			routeGroupBuilder.MapDelete("/{id:int}", DeletePost)
 				.WithName("DeleteAnPost")
@@ -124,11 +124,11 @@ namespace TggWeb.WebApi.Endpoints
 			[FromServices] IWebRepository webRepository,
 			[FromServices] IMapper mapper)
 		{
-			var post = await webRepository.GetPostByIdAsync(id);
+			var post = await webRepository.GetPostByIdAsync(id, true);
 			return post == null
 				? Results.Ok(ApiResponse.Fail(HttpStatusCode.NotFound,
 				$"Couldn not find post with Id {id}"))
-				: Results.Ok(ApiResponse.Success(mapper.Map<PostDto>(post)));
+				: Results.Ok(ApiResponse.Success(mapper.Map<PostDetail>(post)));
 		}
 
 		private static async Task<IResult> GetPostDetailsBySlug(
@@ -144,7 +144,7 @@ namespace TggWeb.WebApi.Endpoints
 		}
 
 		private static async Task<IResult> AddPost(
-			[FromServices] PostEditModel model,
+			[AsParameters] PostEditModel model,
 			[FromServices] IWebRepository webRepository,
 			[FromServices] IMapper mapper)
 		{
@@ -157,10 +157,11 @@ namespace TggWeb.WebApi.Endpoints
 			}
 
 			var post = mapper.Map<Post>(model);
+			post.PostedDate = DateTime.Now;
 			await webRepository.CreateOrUpdatePostAsync(post, model.GetSelectedTag());
 
 			return Results.Ok(ApiResponse.Success(
-				mapper.Map<PostItem>(post),
+				mapper.Map<PostDetail>(post),
 				HttpStatusCode.Created));
 		}
 
@@ -185,7 +186,7 @@ namespace TggWeb.WebApi.Endpoints
 
 		private static async Task<IResult> UpdatePost(
 			[FromRoute] int id,
-			[FromServices] PostEditModel model,
+			[AsParameters] PostEditModel model,
 			[FromServices] IValidator<PostEditModel> validator,
 			[FromServices] IWebRepository webRepository,
 			[FromServices] IMapper mapper)
@@ -207,7 +208,6 @@ namespace TggWeb.WebApi.Endpoints
 			}
 
 			var post = mapper.Map<Post>(model);
-			post.Id = id;
 
 			return await webRepository.AddOrUpdateAsync(post, model.GetSelectedTag())
 				? Results.Ok(ApiResponse.Success("Post is updated",

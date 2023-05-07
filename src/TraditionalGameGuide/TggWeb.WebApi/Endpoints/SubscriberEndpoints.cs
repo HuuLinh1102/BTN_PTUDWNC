@@ -34,7 +34,7 @@ namespace TggWeb.WebApi.Endpoints
 				.AddEndpointFilter<ValidatorFilter<SubscriberEditModel>>()
 				.WithName("AddNewSubscriber")
 				.Produces(401)
-				.Produces<ApiResponse<SubscriberItem>>();
+				.Produces<ApiResponse<SubscriberDto>>();
 
 			routeGroupBuilder.MapPut("/update/{id:int}", UpdateSubscriber)
 				.WithName("UpdateAnSubscriber")
@@ -79,7 +79,7 @@ namespace TggWeb.WebApi.Endpoints
 		}
 
 		private static async Task<IResult> AddSubscriber(
-			[FromServices] SubscriberEditModel model,
+			[AsParameters] SubscriberEditModel model,
 			[FromServices] ISubscriberRepository subscriberRepository,
 			[FromServices] IMapper mapper)
 		{
@@ -95,14 +95,14 @@ namespace TggWeb.WebApi.Endpoints
 			await subscriberRepository.AddOrUpdateAsync(Subscriber);
 
 			return Results.Ok(ApiResponse.Success(
-				mapper.Map<SubscriberItem>(Subscriber),
+				mapper.Map<SubscriberDto>(Subscriber),
 				HttpStatusCode.Created));
 		}
 
 
 		private static async Task<IResult> UpdateSubscriber(
 			[FromRoute] int id,
-			[FromServices] SubscriberEditModel model,
+			[AsParameters] SubscriberEditModel model,
 			[FromServices] IValidator<SubscriberEditModel> validator,
 			[FromServices] ISubscriberRepository subscriberRepository,
 			[FromServices] IMapper mapper)

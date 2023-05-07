@@ -12,6 +12,7 @@ using TggWeb.WebApi.Extensions;
 using TggWeb.WebApi.Filters;
 using TggWeb.WebApi.Models;
 using TggWeb.Core.Contracts;
+using System.Globalization;
 
 namespace TggWeb.WebApi.Endpoints
 {
@@ -35,7 +36,7 @@ namespace TggWeb.WebApi.Endpoints
 				.AddEndpointFilter<ValidatorFilter<CommentEditModel>>()
 				.WithName("AddNewComment")
 				.Produces(401)
-				.Produces<ApiResponse<CommentItem>>();
+				.Produces<ApiResponse<CommentDto>>();
 
 			routeGroupBuilder.MapPut("/{id:int}", UpdateComment)
 				.WithName("UpdateAnComment")
@@ -77,23 +78,30 @@ namespace TggWeb.WebApi.Endpoints
 		}
 
 		private static async Task<IResult> AddComment(
-			[FromServices] CommentEditModel model,
+			[AsParameters] CommentEditModel model,
 			[FromServices] ICommentRepository commentRepository,
 			[FromServices] IMapper mapper)
 		{
+			//var comments = mapper.Map<Comment>(model);
+			//comments.CreatedDate = DateTime.Now;
+			var cmt = new Comment();
+			cmt.Content = model.Content;
+			cmt.IsApproved = model.IsApproved;
+			cmt.CreatedDate = DateTime.Now;
+			cmt.SubscriberId = model.SubscriberId;
+			cmt.PostId= model.PostId;
 
-			var comment = mapper.Map<Comment>(model);
-			await commentRepository.CreateCommentAsync(comment);
+			await commentRepository.AddOrUpdateAsync(cmt);
 
 			return Results.Ok(ApiResponse.Success(
-				mapper.Map<CommentItem>(comment),
+				mapper.Map<CommentDto>(cmt),
 				HttpStatusCode.Created));
 		}
 
 
 		private static async Task<IResult> UpdateComment(
 			[FromRoute] int id,
-			[FromServices] CommentEditModel model,
+			[AsParameters] CommentEditModel model,
 			[FromServices] IValidator<CommentEditModel> validator,
 			[FromServices] ICommentRepository commentRepository,
 			[FromServices] IMapper mapper)
@@ -106,10 +114,15 @@ namespace TggWeb.WebApi.Endpoints
 					HttpStatusCode.BadRequest, validationResult));
 			}
 
-			var comment = mapper.Map<Comment>(model);
-			comment.Id = id;
+			var cmt = new Comment();
+			cmt.Id = id;
+			cmt.Content = model.Content;
+			cmt.IsApproved = model.IsApproved;
+			cmt.CreatedDate = DateTime.Now;
+			cmt.SubscriberId = model.SubscriberId;
+			cmt.PostId = model.PostId;
 
-			return await commentRepository.UpdateCommentAsync(comment)
+			return await commentRepository.AddOrUpdateAsync(cmt)
 				? Results.Ok(ApiResponse.Success("Comment is updated",
 				HttpStatusCode.NoContent))
 				: Results.Ok(ApiResponse.Fail(HttpStatusCode.NotFound,

@@ -24,7 +24,7 @@ namespace TggWeb.WebApi.Models
 
 		public DateTime? ModifiedDate { get; set; }
 
-		public GameDto Category { get; set; }
+		public GameDto Game { get; set; }
 
 		public IList<TagDto> Tags { get; set; }
 

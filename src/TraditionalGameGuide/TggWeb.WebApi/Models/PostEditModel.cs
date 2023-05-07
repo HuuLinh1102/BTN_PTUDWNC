@@ -24,7 +24,7 @@ namespace TggWeb.WebApi.Models
 
         public bool Published { get; set; }
 
-        public int GameId { get; set; }
+		public int GameId { get; set; }
 
         public string SelectedTags { get; set; }
 

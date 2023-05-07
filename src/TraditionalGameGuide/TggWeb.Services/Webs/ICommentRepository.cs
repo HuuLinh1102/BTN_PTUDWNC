@@ -30,11 +30,7 @@ namespace TggWeb.Services.Webs
 			IPagingParams pagingParams,
 			CancellationToken cancellationToken = default);
 
-		Task<Comment> CreateCommentAsync(
-			Comment comment,
-			CancellationToken cancellationToken = default);
-
-		Task<bool> UpdateCommentAsync(
+		Task<bool> AddOrUpdateAsync(
 			Comment comment,
 			CancellationToken cancellationToken = default);
 

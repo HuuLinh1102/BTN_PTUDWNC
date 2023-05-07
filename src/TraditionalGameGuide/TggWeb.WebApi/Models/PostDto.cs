@@ -19,7 +19,7 @@ namespace TggWeb.WebApi.Models
 		public string ImageUrl { get; set; }
 
 		public int ViewCount { get; set; }
-		
+
 		public DateTime PostedDate { get; set; }
 
 		public GameDto Game { get; set; }

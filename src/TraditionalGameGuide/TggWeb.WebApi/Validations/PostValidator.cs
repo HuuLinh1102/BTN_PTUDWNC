@@ -11,8 +11,9 @@ namespace TggWeb.WebApi.Validations
 	public class PostValidator: AbstractValidator<PostEditModel>
 	{
 		public readonly IWebRepository _webRepository;
-		public PostValidator() 
+		public PostValidator(IWebRepository webRepository) 
 		{
+			_webRepository = webRepository;
 			RuleFor(x => x.Title)
 				.NotEmpty()
 				.MaximumLength(500)
@@ -38,6 +39,7 @@ namespace TggWeb.WebApi.Validations
 
 			RuleFor(x => x.SelectedTags)
 				.Must(HasAtLeastOneTag)
+				.NotEmpty()
 				.WithMessage("Bạn phải chọn ít nhất một thẻ");
 
 			When(x => x.Id <= 0, () =>

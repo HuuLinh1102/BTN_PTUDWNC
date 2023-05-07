@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0mDSUWb2w443BPseziaY/RGP8n4zbVKP5GmepWBotEj4lm3w3fZhPJLbEoY24mTLcHbSxXAiieKHj7SVeSsNwA==",
+  "dgSpecHash": "pPOjxyoMGDXC28M4Peoy2D8wzPa2kOnUFzIswK44LwOIH7xoX155IcUrlI8ss7EnP9LJCsBpjp34qeKKbFFONg==",
   "success": true,
   "projectFilePath": "D:\\WebNangCao\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.WinApp\\TggWeb.WinApp.csproj",
   "expectedPackageFiles": [
@@ -71,7 +71,19 @@
     "C:\\Users\\taili\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
     "C:\\Users\\taili\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\taili\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\taili\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
+    "C:\\Users\\taili\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\taili\\.nuget\\packages\\unidecodesharpfork\\1.0.0\\unidecodesharpfork.1.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'UnidecodeSharpFork 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "UnidecodeSharpFork",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }
