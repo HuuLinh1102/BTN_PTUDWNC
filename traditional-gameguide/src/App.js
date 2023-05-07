@@ -8,6 +8,8 @@ import Index from './Pages/Index';
 import Post from './Pages/Post';
 import Accout from './Pages/Accout';
 import Comment from './Pages/Comment';
+import AdminLayout from './Pages/Admin/Layout';
+import * as AdminIndex from './Pages/Admin/Index';
 import {
   BrowserRouter as Router,
   Routes,
@@ -32,6 +34,12 @@ function App() {
                   <Route path='/blog/Post' element={<Post />} />
                   <Route path='blog/Accout' element={<Accout />} />
                   <Route path='blog/Comment' element={<Comment />} />
+                </Route>
+                <Route path='/admin' element={<AdminLayout />}>
+                  <Route path='/admin' element={<AdminIndex.default />}/>
+                  <Route path='/admin/Post' element={<Post />}/>
+                  <Route path='/admin/Accout' element={<Accout/>}/>
+                  <Route path='/admin/Comment' element={<Comment />}/>
                 </Route>
               </Routes>
             </div>
