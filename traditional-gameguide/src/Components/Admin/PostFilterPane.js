@@ -3,10 +3,16 @@ import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { getFilter } from '../../Services/BlogRepository';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+    reset,
+    updateKeyword
+} from '../../Redux/Reducer';
 
 const PostFilterPane = () => {
     const current = new Date(),
     [keyword, setKeyword] = useState('');
+    
     const handleSubmit = (e) => {
         e.preventDefault();
     };
@@ -17,7 +23,7 @@ const PostFilterPane = () => {
             className='row gy-2 gx-3 align-items-center p-2'>
             <Form.Group className='col-auto'>
                 <Form.Label className='visually-hidden'>
-                    keyword
+                    Keyword
                 </Form.Label>
                 <Form.Control
                     type='text'

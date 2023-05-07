@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\học\\hk2 năm 3\\PTUDWNC\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Core\\TggWeb.Core.csproj": {}
+    "D:\\Program Files\\Phát Triển Ứng Dụng Web Nâng Cao\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Core\\TggWeb.Core.csproj": {}
   },
   "projects": {
-    "D:\\học\\hk2 năm 3\\PTUDWNC\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Core\\TggWeb.Core.csproj": {
+    "D:\\Program Files\\Phát Triển Ứng Dụng Web Nâng Cao\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Core\\TggWeb.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\học\\hk2 năm 3\\PTUDWNC\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Core\\TggWeb.Core.csproj",
+        "projectUniqueName": "D:\\Program Files\\Phát Triển Ứng Dụng Web Nâng Cao\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Core\\TggWeb.Core.csproj",
         "projectName": "TggWeb.Core",
-        "projectPath": "D:\\học\\hk2 năm 3\\PTUDWNC\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Core\\TggWeb.Core.csproj",
-        "packagesPath": "C:\\Users\\Thanh\\.nuget\\packages\\",
-        "outputPath": "D:\\học\\hk2 năm 3\\PTUDWNC\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Core\\obj\\",
+        "projectPath": "D:\\Program Files\\Phát Triển Ứng Dụng Web Nâng Cao\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Core\\TggWeb.Core.csproj",
+        "packagesPath": "C:\\Users\\Bow\\.nuget\\packages\\",
+        "outputPath": "D:\\Program Files\\Phát Triển Ứng Dụng Web Nâng Cao\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files\\Visual Studio 2022\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Thanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bow\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

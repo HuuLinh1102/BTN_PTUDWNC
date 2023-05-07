@@ -4158,19 +4158,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Thanh\\.nuget\\packages\\": {}
+    "C:\\Users\\Bow\\.nuget\\packages\\": {},
+    "D:\\Program Files\\Visual Studio 2022\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\học\\hk2 năm 3\\PTUDWNC\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.WebApi\\TggWeb.WebApi.csproj",
+      "projectUniqueName": "D:\\Program Files\\Phát Triển Ứng Dụng Web Nâng Cao\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.WebApi\\TggWeb.WebApi.csproj",
       "projectName": "TggWeb.WebApi",
-      "projectPath": "D:\\học\\hk2 năm 3\\PTUDWNC\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.WebApi\\TggWeb.WebApi.csproj",
-      "packagesPath": "C:\\Users\\Thanh\\.nuget\\packages\\",
-      "outputPath": "D:\\học\\hk2 năm 3\\PTUDWNC\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.WebApi\\obj\\",
+      "projectPath": "D:\\Program Files\\Phát Triển Ứng Dụng Web Nâng Cao\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.WebApi\\TggWeb.WebApi.csproj",
+      "packagesPath": "C:\\Users\\Bow\\.nuget\\packages\\",
+      "outputPath": "D:\\Program Files\\Phát Triển Ứng Dụng Web Nâng Cao\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.WebApi\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Program Files\\Visual Studio 2022\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Thanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Bow\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4184,14 +4189,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\học\\hk2 năm 3\\PTUDWNC\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Core\\TggWeb.Core.csproj": {
-              "projectPath": "D:\\học\\hk2 năm 3\\PTUDWNC\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Core\\TggWeb.Core.csproj"
+            "D:\\Program Files\\Phát Triển Ứng Dụng Web Nâng Cao\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Core\\TggWeb.Core.csproj": {
+              "projectPath": "D:\\Program Files\\Phát Triển Ứng Dụng Web Nâng Cao\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Core\\TggWeb.Core.csproj"
             },
-            "D:\\học\\hk2 năm 3\\PTUDWNC\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Data\\TggWeb.Data.csproj": {
-              "projectPath": "D:\\học\\hk2 năm 3\\PTUDWNC\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Data\\TggWeb.Data.csproj"
+            "D:\\Program Files\\Phát Triển Ứng Dụng Web Nâng Cao\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Data\\TggWeb.Data.csproj": {
+              "projectPath": "D:\\Program Files\\Phát Triển Ứng Dụng Web Nâng Cao\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Data\\TggWeb.Data.csproj"
             },
-            "D:\\học\\hk2 năm 3\\PTUDWNC\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Services\\TggWeb.Services.csproj": {
-              "projectPath": "D:\\học\\hk2 năm 3\\PTUDWNC\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Services\\TggWeb.Services.csproj"
+            "D:\\Program Files\\Phát Triển Ứng Dụng Web Nâng Cao\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Services\\TggWeb.Services.csproj": {
+              "projectPath": "D:\\Program Files\\Phát Triển Ứng Dụng Web Nâng Cao\\BTN_PTUDWNC\\src\\TraditionalGameGuide\\TggWeb.Services\\TggWeb.Services.csproj"
             }
           }
         }
